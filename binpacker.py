@@ -20,12 +20,13 @@ items = []
 maxBins = int(input('Insert number of bins: '))
 
 for i in range(0, maxBins):
-    input_elements = (input(f'Input item {i+1} name: '), int(input(f'Input item {i+1} size: ')))
+    input_elements = (input(f'Input item {i + 1} name: '), int(input(f'Input item {i + 1} size: ')))
     items.append(input_elements)
 
 itemCount = len(items)
-
-binCapacity = int(input('Insert capacity of bins: '))
+binCapacity = 0
+for i in range(0, maxBins):
+    binCapacity = int(input(f'Insert capacity of {i + 1} bin: '))
 
 # Indicator variable assigned 1 when the bin is used.
 y = pulp.LpVariable.dicts('UsedBin', range(maxBins), lowBound=0, upBound=1, cat=const.LpInteger)
