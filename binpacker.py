@@ -22,12 +22,12 @@ items = [("A", 6), ("B", 7), ("C", 8), ("D", 35), ("E", 3), ("F", 32),
 itemCount = len(items)
 
 # Max number of bins allowed.
-input_maxBins = input('Insert number of bins: ')
-maxBins = int(input_maxBins)
+
+maxBins = 5
 
 # Bin Size
-input_binCapacity = input('Insert capacity of bins: ')
-binCapacity = int(input_binCapacity)
+
+binCapacity = 35
 
 # Indicator variable assigned 1 when the bin is used.
 y = pulp.LpVariable.dicts('UsedBin', range(maxBins), lowBound=0, upBound=1, cat=const.LpInteger)
