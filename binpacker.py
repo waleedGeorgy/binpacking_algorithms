@@ -14,20 +14,18 @@ import time
 #
 # A list of item tuples (name, weight) -- name is meaningless except to humans.
 # Weight and Size are used interchangeably here and elsewhere.
-#
-items = [("A", 6), ("B", 7), ("C", 8), ("D", 35), ("E", 3), ("F", 32),
-         ("G", 6), ("H", 8), ("I", 10), ("J", 13), ("K", 12), ("L", 2),
-         ("M", 3), ("N", 1), ("O", 11), ("P", 2), ("Q", 9)]
+
+items = []
+
+maxBins = int(input('Insert number of bins: '))
+
+for i in range(0, maxBins):
+    input_elements = (input(f'Input item {i+1} name: '), int(input(f'Input item {i+1} size: ')))
+    items.append(input_elements)
 
 itemCount = len(items)
 
-# Max number of bins allowed.
-input_maxBins = input('Insert number of bins: ')
-maxBins = int(input_maxBins)
-
-# Bin Size
-input_binCapacity = input('Insert capacity of bins: ')
-binCapacity = int(input_binCapacity)
+binCapacity = int(input('Insert capacity of bins: '))
 
 # Indicator variable assigned 1 when the bin is used.
 y = pulp.LpVariable.dicts('UsedBin', range(maxBins), lowBound=0, upBound=1, cat=const.LpInteger)
