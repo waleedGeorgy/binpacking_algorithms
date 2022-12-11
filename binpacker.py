@@ -20,9 +20,10 @@ items = []
 maxBins = int(input('Insert number of bins: '))
 binCapacity = 0
 for i in range(0, maxBins):
-    binCapacity = int(input(f'Insert capacity of {i + 1} bin: '))
+    binCapacity = int(input(f'Insert capacity of bin {i + 1}: '))
 
-for i in range(0, maxBins):
+item_number = int(input('Inter number of items: '))
+for i in range(0, item_number):
     input_elements = (input(f'Input item {i + 1} name: '), int(input(f'Input item {i + 1} size: ')))
     items.append(input_elements)
 
