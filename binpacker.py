@@ -1,19 +1,5 @@
-#
-# Bin packing as a LP problem:
-# http://www.or.deis.unibo.it/kp/Chapter8.pdf
-#
-# Requisite Wiki Article:
-# https://en.wikipedia.org/wiki/Bin_packing_problem
-#
-# PuLP Library:
-# https://pythonhosted.org/PuLP/index.html
-#
 from pulp import *
 import time
-
-#
-# A list of item tuples (name, weight) -- name is meaningless except to humans.
-# Weight and Size are used interchangeably here and elsewhere.
 
 items = []
 items_weights = []
